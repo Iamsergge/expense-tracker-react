@@ -12,7 +12,7 @@ import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth' ;
 
         const register = (()=>{
             createUserWithEmailAndPassword(auth,email, password).then(()=>{
-                alert  ("Registered successfully");
+                alert("Registered successfully");
 
             }).catch((error)=>{
                 console.log(error.message)
@@ -20,7 +20,7 @@ import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth' ;
 
         })
         return (
-        <div>
+        <div className='container'>
             <h1>Sign up page</h1>
             <input type="text" placeholder="Enter email" onChange = {(event)=> setEmail=(event.target.value)} /> <br></br>
 

@@ -1,7 +1,7 @@
 function DisplayTransaction(props){
     console.log(props);
     return (
-        <div>
+        <div className="container">
             <h4>History of your transaction</h4>
 {props.transactions.map((data)=> (
     <div className="list-Item">

@@ -2,7 +2,7 @@ import React from 'react';
 
 function NoPageFound(){
     return (
-        <div>
+        <div className='container'>
             <h1>Page does not exist</h1>
         </div>
     )

@@ -6,7 +6,7 @@ import DisplayTransaction from './displayTransaction';
 
 function Home (props){
     return (
-        <div>
+        <div className='container'> 
         <DisplayTransaction transactions={props.transactions}/>
         <AddTransaction add={props.add}/>
 

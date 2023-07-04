@@ -23,13 +23,14 @@ function Login(){
 
     
     return ( 
-    <div>
+    <div className='container'>
         <h1>Login Page</h1>
         <input type="text" placeholder="Enter email" onChange={(event)=>setEmail(event.target.value)}/> <br></br>
         <input type="password" placeholder="Enter password" onChange={(event)=>setPassword(event.target.value)}/> <br></br>
         <button onClick={handleClick}>login</button><br></br><br></br>
-        <Link to='/forgotPassword'>Forgot Password</Link>
-
+        
+        <br></br>
+        <Link to='/forgotPassword'>forgot Password</Link> <br></br>
         <Link to='/signUp'>Don`t have an acoount : Sign Up</Link>
     </div>
 

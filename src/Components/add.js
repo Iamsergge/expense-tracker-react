@@ -1,13 +1,32 @@
+import {db} from "../config/firebase"
+import { collection, addDoc } from "firebase/firestore";
 import { useState } from "react";
 function AddTransaction(props) {
     const [transactionItem, setTransactionItem] = useState('');
     const [amount, setAmount] = useState('');
     const [transactionType, setTransactionType] = useState('');
-    const add = (() => {
-        props.add(transactionItem, amount, transactionType);
+    
+    
+    const add = (async() => {
+       
+        // props.add(transactionItem, amount, transactionType);
+        
+        try {
+            const docRef = await addDoc(collection(db, "transaction"), {
+                transactionItem:transactionItem,
+                amount:amount,
+                transactionType:transactionType
+            });
+            alert("Added successfully")
+
+        } catch (error) {
+            
+        }
+
+
     })
     return (
-        <div>
+        <div className="container">
             <h1> Add a new transaction </h1>
             <input type="text" placeholder="Enter item" onChange={(event) => setTransactionItem(event.target.value)} /><br></br>
             <input type="text" placeholder="Enter amount" onChange={(event) => setAmount(event.target.value)} /><br></br>
